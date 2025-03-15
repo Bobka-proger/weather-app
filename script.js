@@ -9,8 +9,8 @@ async function getWeather() {
     let {description, icon} = respToJSON.weather[0] 
     weatherInfo.innerHTML = `
     <img class="weather-icon" src="http://openweathermap.org/img/wn/${icon}@4x.png"
-    <p class="temperature">температура: ${Math.round(temp)}°</p>
-    <p class="description">температура: ${description}°</p>
+    <p class="temperature">${Math.round(temp)}°</p>
+    <p class="description">${description}</p>
     `
 }
 getWeather()
