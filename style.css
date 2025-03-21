@@ -1,11 +1,41 @@
 body {
     height: 100vh;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
     color: #fff;
+    font-family: "Pacifico", sans-serif;
 }
 .weather-card {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+}
+.temperature {
+    font-size: 3em;;
+}
+.description {
+    font-size: 2em;
+}
+.clear {
+    background: radial-gradient(#00fff7, #7cb7de)
+}
+.cloudy, .storm {
+    background: radial-gradient(#2d2e2d, #7cb7de)
+}
+.rain {
+    background: linear-gradient(30deg, #7cb7de, #4d5454);
+}
+.snow {
+    background-color: rgb(221, 215, 215);
+    background-image: radial-gradient(circle, 
+        rgb(255, 255, 255) 10%, transparent 10%), 
+    radial-gradient(circle, 
+        rgb(255, 255, 255) 10%, transparent 10%);
+    background-size: 50px 50px;
+    background-position: 0 0, 25px 25px;
+    color: #000;
+}
+.fog {
+    background: radial-gradient(#9b9494, #dbcaca);
+}
+.windy {
+    background: linear-gradient(90deg, #f0ecec, #9ab9c4);
 }

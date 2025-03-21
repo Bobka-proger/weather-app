@@ -6,11 +6,37 @@ async function getWeather() {
     const resp = await fetch(API_WEATHER)
     const respToJSON = await resp.json()
     let {temp} = respToJSON.main
-    let {description, icon} = respToJSON.weather[0] 
+    let {description, icon} = respToJSON.weather[0]
     weatherInfo.innerHTML = `
-    <img class="weather-icon" src="http://openweathermap.org/img/wn/${icon}@4x.png"
+    <img class="weather-icon" src="http://openweathermap.org/img/wn/${icon}@4x.png">
     <p class="temperature">${Math.round(temp)}°</p>
     <p class="description">${description}</p>
     `
+    let body = document.body
+
+    switch (description) {
+        case "ясно":
+            body.classList = "clear"
+            break;
+        case "пасмурно":
+            body.classList = "cloudy"
+            break;
+        case "дождь":
+            body.classList = "rain"
+            break;
+        case "снег":
+            body.classList = "snow"
+            break;
+        case "туман":
+            body.classList = "fog"
+            break;
+        case "гроза":
+            body.classList = "storm"
+            break;
+        default:
+            body.classList = "windy"
+            break;
+    }
+    console.log(description)
 }
 getWeather()
